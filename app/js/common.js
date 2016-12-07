@@ -267,7 +267,7 @@ var pairs = function (ilevel, isize) {
                 $.each(e_, function (i, e__) {
                     time += e__.time;
                     errors += e__.errors;
-                    scores += e__.scores;
+                    scores += e__.scores > 0 ? e__.scores : 0;
                 });
             });
         });

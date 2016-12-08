@@ -238,12 +238,10 @@ var pairs = function (ilevel, isize) {
                 '' + (2004 + i), rand(i, 200)
             ]);
         }
-        var data = google.visualization.arrayToDataTable(
-            data
-        );
+        data = google.visualization.arrayToDataTable(data);
 
         var options = {
-            title: 'Company Performance',
+            title: 'Performance',
             curveType: 'function',
             legend: {
                 position: 'bottom',
@@ -259,7 +257,7 @@ var pairs = function (ilevel, isize) {
 
         chart.draw(data, options);
 
-        var gameData = [
+        data = [
             ['Dimension', 'Value']
         ], time = 0, errors = 0, scores = 0;
         $.each(storage.get('game.pairs'), function (i, e) {
@@ -267,16 +265,16 @@ var pairs = function (ilevel, isize) {
                 $.each(e_, function (i, e__) {
                     time += e__.time;
                     errors += e__.errors;
-                    scores += e__.scores;
+                    scores += e__.scores > 0 ? e__.scores : 0;
                 });
             });
         });
-        gameData.push(['Scores', scores]);
-        gameData.push(['Errors', errors]);
+        data.push(['Scores', scores]);
+        data.push(['Errors', errors]);
         // gameData.push(['Time', time]);
-        data = google.visualization.arrayToDataTable(gameData);
+        data = google.visualization.arrayToDataTable(data);
 
-        var options = {
+        options = {
             legend: {
                 position: 'bottom',
                 textStyle: {
@@ -289,7 +287,7 @@ var pairs = function (ilevel, isize) {
             fontName: 'Cairo'
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('pairs_pie'));
+        chart = new google.visualization.PieChart(document.getElementById('pairs_pie'));
 
         chart.draw(data, options);
     },

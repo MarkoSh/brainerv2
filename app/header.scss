@@ -164,6 +164,7 @@ $substractor: 10;
   }
   .close:before {
     display: none;
+    position: fixed;
   }
 }
 
@@ -201,10 +202,31 @@ $substractor: 10;
     @media (max-height: 360px) {
       padding: 10px 30px;
     }
-    background-color: rgba(75,75,75,.1);
+    background-color: rgba(75,75,75,.3);
     transition: .3s;
     &:hover {
-      background-color: rgba(75,75,75,.2)
+      background-color: rgba(75,75,75,.4)
+    }
+  }
+  &>li {
+    &>.submenu {
+      width: 100%;
+      cursor: pointer;
+      position: absolute;
+      z-index: 1000;
+      top: 100%;
+      left: 0;
+      text-align: center;
+      display: none;
+      li {
+        width: 100%;
+        margin-top: 1px;
+      }
+    }
+    &:hover {
+      &>.submenu {
+        display: block;
+      }
     }
   }
   ul {

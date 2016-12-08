@@ -1,0 +1,33 @@
+{
+  "name": "brainerv2",
+  "description": "Hello, brainiac",
+  "main": "index.js",
+  "authors": [
+    "MarkSchk"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "brain",
+    "pairs"
+  ],
+  "homepage": "markschk.ru",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-easing": "*",
+    "fullpage.js": "fullpage#^2.8.9",
+    "jquery-storage-api": "jQuery-Storage-API#1.9.1",
+    "jquery.cookie": "jquery-cookie#^1.4.1",
+    "easing": "*",
+    "reset-css": "^2.2.0",
+    "wow": "^1.1.2",
+    "hammerjs": "^2.0.8",
+    "normalize-css": "^5.0.0"
+  }
+}

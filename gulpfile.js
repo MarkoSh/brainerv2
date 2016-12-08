@@ -17,7 +17,8 @@ var gulp = require('gulp'),
     bourbon = require('node-bourbon'),
     ftp = require('vinyl-ftp'),
     notify = require("gulp-notify"),
-    gcmq = require('gulp-group-css-media-queries');
+    gcmq = require('gulp-group-css-media-queries'),
+    gae = require('gulp-gae-improved');
 
 gulp.task('browser-sync', function () {
     browserSync({
@@ -143,6 +144,14 @@ gulp.task('deploy', function () {
 
 gulp.task('clearcache', function () {
     return cache.clearAll();
+});
+
+gulp.task('gae-deploy', ['build'], function () {
+    return gulp.src('dist/app.yaml')
+        .pipe(gae('appcfg.py', {
+            commands: ['update'],
+            async: false
+        }));
 });
 
 gulp.task('default', ['watch']);

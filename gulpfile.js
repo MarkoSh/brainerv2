@@ -56,15 +56,13 @@ gulp.task('headerscss', function () {
 
 gulp.task('libs', function () {
     return gulp.src([
-        'app/libs/jquery/dist/jquery.min.js',
-        'app/libs/jquery-storage-api/jquery.storageapi.min.js',
-        'app/libs/jquery-easing/jquery.easing.min.js',
-        'app/libs/wow/dist/wow.min.js',
-        'app/libs/hammerjs/hammer.min.js',
-        'app/libs/fullpage.js/vendors/scrolloverflow.min.js',
-        'app/libs/fullpage.js/dist/jquery.fullpage.min.js',
-        'app/libs/jquery.cookie/jquery.cookie.js'
-    ])
+            'app/libs/jquery/dist/jquery.min.js',
+            'app/libs/jquery-storage-api/jquery.storageapi.min.js',
+            'app/libs/jquery-easing/jquery.easing.min.js',
+            'app/libs/wow/dist/wow.min.js',
+            'app/libs/hammerjs/hammer.min.js',
+            'app/libs/jquery.cookie/jquery.cookie.js'
+        ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('app/js'));

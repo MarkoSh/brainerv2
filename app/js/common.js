@@ -230,9 +230,7 @@ var pairs = function (ilevel, isize) {
         return res
     })()),
     drawChart = function () {
-        var data = [
-            ['Date', 'Scores']
-        ];
+        var data = [['Date', 'Scores']];
         for (var i = 0; i < 100; i++) {
             data.push([
                 '' + (2004 + i), rand(i, 200)
@@ -257,9 +255,10 @@ var pairs = function (ilevel, isize) {
 
         chart.draw(data, options);
 
-        data = [
-            ['Dimension', 'Value']
-        ], time = 0, errors = 0, scores = 0;
+        data = [['Dimension', 'Value']],
+            time = 0,
+            errors = 0,
+            scores = 0;
         $.each(storage.get('game.pairs'), function (i, e) {
             $.each(e, function (i, e_) {
                 $.each(e_, function (i, e__) {
